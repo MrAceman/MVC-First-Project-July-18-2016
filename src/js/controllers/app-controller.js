@@ -10,12 +10,13 @@ class AppController {
     this.list      = list;
   }
 
-    init(){
+    init () {
       this.taskClick();
       this.formSubmit();
     }
 
-  addTask (objective, due){
+
+  addTask (objective, due) {
     let id = _.random(100, 999);
     let task = new Task(id, objective, due);
     let taskHTML = this.taskTemplate(task);
@@ -26,13 +27,12 @@ class AppController {
   }
 
 
-
   taskClick(){
     this.container.on('click', 'li', (event) => {
       event.preventDefault();
 
       let id = $(event.target).data('taskid');
-      let task = _.find(this.list.task, {id: id});
+      let task = _.find(this.list.tasks, { id: id });
 
       task.toggleComplete();
 
@@ -63,4 +63,4 @@ class AppController {
 
 }
 
-export {AppController};
+export { AppController };

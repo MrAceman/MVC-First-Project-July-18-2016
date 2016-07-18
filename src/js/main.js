@@ -16,6 +16,3 @@ let list = new List('Grocery List', 'All the things I want to eat');
 let app  = new AppController(addTaskForm, listContainer, list);
 
 app.init();
-
-
-console.log(app);
