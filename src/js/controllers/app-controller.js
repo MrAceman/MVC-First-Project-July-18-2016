@@ -16,7 +16,7 @@ class AppController {
     }
 
 
-  addTask (objective, due) {
+  addTask (objective, due){
     let id = _.random(100, 999);
     let task = new Task(id, objective, due);
     let taskHTML = this.taskTemplate(task);
@@ -42,6 +42,8 @@ class AppController {
     });
   }
 
+
+
   formSubmit(){
     this.form.on('submit', (event) => {
       event.preventDefault();
@@ -55,7 +57,7 @@ class AppController {
 
   taskTemplate(task){
     return `
-    <li data-taskid="task-${task.id}">
+    <li data-taskid="${task.id}">
     ${task.objective} - <span class"tiny">${task.dueDate}</span>
     </li>
     `;
