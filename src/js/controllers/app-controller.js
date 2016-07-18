@@ -25,6 +25,8 @@ class AppController {
     this.container.append(taskHTML);
   }
 
+
+
   taskClick(){
     this.container.on('click', 'li', (event) => {
       event.preventDefault();
@@ -52,9 +54,11 @@ class AppController {
   }
 
   taskTemplate(task){
-    return `<li data-taskid="task-${task.id}">
+    return `
+    <li data-taskid="task-${task.id}">
     ${task.objective} - <span class"tiny">${task.dueDate}</span>
-    </li>`
+    </li>
+    `;
   }
 
 }
